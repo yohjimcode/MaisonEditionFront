@@ -1,5 +1,5 @@
 
-.titre {
+header {
     background-color: #050505;
     height: 60px;
     display: flex;
@@ -9,6 +9,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
     
     a { 
         text-decoration:none;
@@ -48,6 +49,10 @@
             color: #fff;     
         }
     }  
+
+    .active{
+        font-weight: bold;
+    }
 }
 
 /*Installer SonarLint + icone login + border reste bleu */

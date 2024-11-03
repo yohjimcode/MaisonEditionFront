@@ -1,1 +1,8 @@
-<p>accueil works!</p>
+<div class="app-accueil">
+    <h1>Meilleures ventes</h1>
+    <div class="collection">
+        @for (ceLivre of livres; track ceLivre.id){
+        <app-livre [livre]="ceLivre"></app-livre>
+        }
+    </div>
+</div>

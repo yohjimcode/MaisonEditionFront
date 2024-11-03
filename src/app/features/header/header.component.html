@@ -1,14 +1,15 @@
-<div class="titre">
+<header>
     <div class="leftTitle">
         <a href="arcenciel">ArcEnCiel <span>Editions</span></a>
     </div>
-    <div class="centerTitle">
-        <a class="nav-link" routerLink="/accueil">Accueil</a>
-        <a href="#livres">Livres</a>
-        <a class="nav-link" routerLink="/propos">A propos</a>
-        <a class="nav-link" routerLink="/contact">Contact</a>
-    </div>
+        <ul class="centerTitle">
+            <li><a routerLink="accueil" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Accueil</a></li>
+            <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Collection</a></li>
+            <li><a routerLink="propos" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">A propos</a></li>
+            <li><a routerLink="contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Contact</a></li>
+        </ul>
+
     <div class="rightTitle">
-        <a href="#meconnecter">Me connecter</a>
+        <a routerLink="connecter" (click)="isConnected()">{{textBouton}}</a>
     </div>
-</div>
+</header>

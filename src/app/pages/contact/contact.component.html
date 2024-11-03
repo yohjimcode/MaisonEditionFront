@@ -1,57 +1,60 @@
 <div class="contact-app">
     <h1>Nous contacter ! </h1>
-    <div class="image">
-        <img [src]="cheminImage">
-    </div>
-    <!-- inserer image -->
-    <div class="formulaire">
+    <div class="body">
+        <div class="image">
+            <img [src]="cheminImage" alt="picture">
+        </div>
+        <!-- inserer image -->
+        <div class="formulaire">
 
-        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
-            <div class="champs">
-                <label for="nom">Votre Nom </label>
-                <input id="nom" formControlName="nom">
+                <div class="champs">
+                    <label for="nom">Votre Nom </label>
+                    <input id="nom" formControlName="nom">
 
-                <small *ngIf="pasValideEtPasInitierOuModifer(formGroup.controls.nom)">
-                    <ng-container *ngIf="formGroup.controls.nom.hasError('required')">
-                        * champs requis
-                    </ng-container>
-                </small>
-            </div>
-            <div class="champs">
-                <label type="organisation">Votre Organisation </label>
-                <input type="text" id="organisation" formControlName="organisation">
-            </div>
-            <div class="champs">
-                <label for="email">Votre e-mail </label>
-                <input type="email" id="email" formControlName="email">
+                    <small *ngIf="pasValideEtPasInitierOuModifer(formGroup.controls.nom)">
+                        <ng-container *ngIf="formGroup.controls.nom.hasError('required')">
+                            * champs requis
+                        </ng-container>
+                    </small>
+                </div>
+                <div class="champs">
+                    <label type="organisation">Votre Organisation </label>
+                    <input type="text" id="organisation" formControlName="organisation">
+                </div>
+                <div class="champs">
+                    <label for="email">Votre e-mail </label>
+                    <input type="email" id="email" formControlName="email">
 
-                <small *ngIf="pasValideEtPasInitierOuModifer(formGroup.controls.email)">
-                    <ng-container *ngIf="formGroup.controls.email.hasError('required')">
-                        * champs requis
-                    </ng-container>
-                    <ng-container *ngIf="formGroup.controls.email.hasError('email')">
-                        * email invalide
-                    </ng-container>
-                </small>
-            </div>
-            <div class="champs">
-                <label for="message">Votre message </label>
-                <textarea id="message" formControlName="message"></textarea>
+                    <small *ngIf="pasValideEtPasInitierOuModifer(formGroup.controls.email)">
+                        <ng-container *ngIf="formGroup.controls.email.hasError('required')">
+                            * champs requis
+                        </ng-container>
+                        <ng-container *ngIf="formGroup.controls.email.hasError('email')">
+                            * email invalide
+                        </ng-container>
+                    </small>
+                </div>
+                <div class="champs">
+                    <label for="message">Votre message </label><br>
+                    <textarea id="message" formControlName="message"></textarea>
 
-                <small *ngIf="pasValideEtPasInitierOuModifer(formGroup.controls.email)">
-                    <ng-container *ngIf="formGroup.controls.message.hasError('required')">
-                        * champs requis
-                    </ng-container>
-                    <ng-container *ngIf="formGroup.controls.message.hasError('minLength')">
-                        Minimum 5 caracteres
-                    </ng-container>
-                    <ng-container *ngIf="formGroup.controls.message.hasError('maxLength')">
-                        Maximum 100 caracteres
-                    </ng-container>
-                </small>
-            </div>
-            <button type="submit"> Envoyer </button>
-        </form>
+                    <small *ngIf="pasValideEtPasInitierOuModifer(formGroup.controls.email)">
+                        <ng-container *ngIf="formGroup.controls.message.hasError('required')">
+                            * champs requis
+                        </ng-container>
+                        <ng-container *ngIf="formGroup.controls.message.hasError('minLength')">
+                            * Minimum 5 caracteres  
+                            <!-- Ne fonctionne pas  -->
+                        </ng-container>
+                        <ng-container *ngIf="formGroup.controls.message.hasError('maxlength')">
+                            Maximum 100 caracteres
+                        </ng-container>
+                    </small>
+                </div>
+                <button type="submit"> Envoyer </button>
+            </form>
+        </div>
     </div>
 </div>
