@@ -1,0 +1,22 @@
+<div *ngIf="livres.length > 0">
+    <h2>Liste des Livres</h2>
+    <ul>
+      <li *ngFor="let livre of livres">
+        <strong>{{ livre.titre }}</strong> ({{ livre.typeLivre }})<br />
+        <p>Synopsis : </p>
+        <em>{{ livre.synopsis }}</em><br />
+        <span *ngIf="livre.typeLivre === 'numérique'">
+          Parution numérique : {{ livre.dateParutionNumerique }} - Prix : {{ livre.prixNumerique }}€
+        </span>
+        <span *ngIf="livre.typeLivre === 'physique'">
+          Parution physique : {{ livre.dateParutionPhysique }} - Prix : {{ livre.prixPhysique }}€
+        </span>
+        <br>
+        <span>Catégorie : {{ livre.categorie }}</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="livres.length === 0">
+    <p>Aucun livre disponible.</p>
+  </div>

@@ -1,0 +1,15 @@
+*{
+    padding: 60px;
+    :host{
+       
+        background: linear-gradient(rgba(0,0,0,0.1),#333), url(./../../../assets/pexels-lina.png); 
+        background-position: center; // image centrée 
+        background-size: cover; // Couvre la page
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    } 
+}

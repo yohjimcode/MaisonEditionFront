@@ -1,0 +1,51 @@
+.contact-app {
+    margin: 70px 20%;
+    // border: 0.1px solid #252d2d;
+    // border-radius: 0.8dvh;
+    background-color: rgba($color: #ecf3f4, $alpha: 0.4);
+    h1 {
+        margin: 60px 0;
+        text-align: center;
+    }
+
+    .body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .image {
+            img{
+                width: 70%;
+            }
+            //height: 40%;
+        }
+
+        .formulaire {
+            // border: 0.1px solid #252d2d;
+            // border-radius: 0.8dvh;
+            // background-color: rgba($color: #ecf3f4, $alpha:0.4 );
+    
+            .champs {
+                margin-bottom: 2em;
+            }
+
+            input {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                width: 80%;
+            }
+
+            small {
+                font-size: 0.6em;
+                color: red;
+            }
+
+            textarea {
+                resize: none;
+                height: 100px;
+
+            }
+        }
+    }
+}

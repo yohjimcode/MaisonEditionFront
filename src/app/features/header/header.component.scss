@@ -1,0 +1,58 @@
+
+header {
+    background-color: #050505;
+    height: 60px;
+    display: flex;
+    align-items: center; /*centre sur la hauteur */
+    justify-content: space-between;
+    position: fixed; /* garde le header toujours visible*/ 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+    a { 
+        text-decoration:none;
+        color: #fff;
+        &:link {
+            text-decoration: none;
+        }
+    }
+
+    .leftTitle{
+        font-size: 25px;
+        padding: 30px;
+        a span{
+            color: #29d9d5;
+        }
+    }
+
+    .centerTitle{
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        gap: 30px;
+    }
+
+    .rightTitle{
+        font-size: 18px;
+        padding: 5px 20px;
+        margin-right: 20px;
+        transition: 0.5s;
+        border: 0.1px solid #29d9d5;
+        border-radius: 0.8dvh;
+        a{           
+            color: #29d9d5; 
+        }
+        :hover{
+            color: #fff;     
+        }
+    }  
+
+    .active{
+        font-weight: bold;
+    }
+}
+
+/*Installer SonarLint + icone login + border reste bleu */

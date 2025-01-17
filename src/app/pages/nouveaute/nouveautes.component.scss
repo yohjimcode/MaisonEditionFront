@@ -1,0 +1,14 @@
+.app-accueil{
+    margin-top: 60px;
+    .collection{
+        display: flex;    
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1{
+        background-color: #d2d2d6;
+        padding: 40px 0;
+        text-align: center;
+    }
+}

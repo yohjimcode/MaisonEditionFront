@@ -1,0 +1,18 @@
+<header>
+    <div class="leftTitle">
+        <a href="arcenciel">ArcEnCiel <span>Editions</span></a>
+    </div>
+    <ul class="centerTitle">
+        <li><a routerLink="nouveautes" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Nouveautés</a></li>
+        <li><a routerLink="collection" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Collection</a></li>
+        <li><a routerLink="propos" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Présentation</a></li>
+        <li><a routerLink="contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Contact</a></li>
+        <li><a routerLink="parametrages" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Parametrages</a></li>
+    </ul>
+    
+
+    <div class="rightTitle">
+        <a routerLink="connecter" (click)="isConnected()">{{textBouton}}</a>
+        <!-- changer pour un logo -->
+    </div>
+</header>

@@ -1,0 +1,10 @@
+<div class="app-livre">
+    <h2>{{livre.titre}}</h2>
+    <h3>{{livre.chapitre}}</h3>
+    <h4>{{livre.auteur}}</h4>
+    <img [src]="livre.imageLivre" alt="photo de livre">
+    <p><strong>Prix : {{livre.prix}}€</strong></p>
+    <p>Paru le : {{livre.dateParution | date : 'dd MMM yyyy à HH:mm'}}</p>
+    <p id=resume>{{livre.resume}}</p>
+    <button (click)="addRecommandation()">{{textBouton}}</button> {{livre.recommandation}}
+</div>
