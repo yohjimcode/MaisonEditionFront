@@ -57,13 +57,13 @@
               "extractLicenses": false,
               "sourceMap": true
             },
-            "recette": {
+            "test": {
 
               "fileReplacements": [
                 {
                   
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environnement-recette.ts"
+                  "with": "src/environments/environnement-test.ts"
                 }
               ],
               "optimization": true, 
@@ -83,8 +83,8 @@
             "development": {
               "buildTarget": "MaisonEdition:build:development"
             },
-            "recette": {
-              "buildTarget": "MaisonEdition:build:recette"
+            "test": {
+              "buildTarget": "MaisonEdition:build:test"
             }
           },
           "defaultConfiguration": "development"
