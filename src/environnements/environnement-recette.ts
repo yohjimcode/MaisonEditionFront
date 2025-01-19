@@ -1,5 +1,5 @@
 export const environnement = {
-    production: true,
+    production: false,
     apiUrl: '/api',
     name: '{{ENV_NAME}}'
 }
