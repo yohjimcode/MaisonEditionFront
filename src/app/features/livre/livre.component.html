@@ -1,10 +1,31 @@
 <div class="app-livre">
     <h2>{{livre.titre}}</h2>
-    <h3>{{livre.chapitre}}</h3>
-    <h4>{{livre.auteur}}</h4>
-    <img [src]="livre.imageLivre" alt="photo de livre">
-    <p><strong>Prix : {{livre.prix}}€</strong></p>
-    <p>Paru le : {{livre.dateParution | date : 'dd MMM yyyy à HH:mm'}}</p>
-    <p id=resume>{{livre.resume}}</p>
-    <button (click)="addRecommandation()">{{textBouton}}</button> {{livre.recommandation}}
+    <h4>Auteur : {{livre.auteur}}</h4>
+
+    <img *@if="livre.imageLivre" [src]="livre.illustration" alt="photo de livre">
+
+    <p id=Collection>{{livre.collection}}</p>
+
+    <p id=resume>{{livre.synopsis}}</p>
+
+    <p id=isbn>{{livre.isbn}}</p>
+
+    <p>Nombre de pages : 
+        <span *@if="livre.nbrePages === 'nbrPagesNumerique'">{{ livre.nbrPagesNumerique }} pages</span>
+        <span *@if="livre.nbrePages === 'nbrPagesPhysique'">{{ livre.nbrPagesPhysique }} pages</span>
+    </p>
+
+
+
+    <p>Paru le : 
+        <span *@if="livre.typeLivre === 'NUMERIQUE'">{{ livre.dateParutionNumerique | date : 'dd MMM yyyy' }}</span>
+        <span *@if="livre.typeLivre === 'PHYSIQUE'">{{ livre.dateParutionPhysique | date : 'dd MMM yyyy' }}</span>
+    </p>
+
+    <p><strong>Prix : 
+        <span *@if="livre.typeLivre === 'NUMERIQUE'">{{ livre.prixNumerique }}€</span>
+        <span *@if="livre.typeLivre === 'PHYSIQUE'">{{ livre.prixPhysique }}€</span>
+    </strong></p>
+
+    <!-- <button (click)="addRecommandation()">{{textBouton}}</button> {{livre.recommandation}} -->
 </div>

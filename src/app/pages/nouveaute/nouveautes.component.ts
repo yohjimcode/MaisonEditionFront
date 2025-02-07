@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LivreComponent } from '../../features/livre/livre.component';
-import { livresModels } from '../../models/livresModels';
+import { LivresModel } from '../../models/LivresModel';
 import { NouveauteService } from '../../services/nouveaute.service';
 
 
@@ -15,7 +15,7 @@ import { NouveauteService } from '../../services/nouveaute.service';
 })
 export default class NouveautesComponent implements OnInit {
 
-  livres!: livresModels[];
+  livres!: LivresModel[];
 
   constructor(private nouveauteLivre : NouveauteService){}
 

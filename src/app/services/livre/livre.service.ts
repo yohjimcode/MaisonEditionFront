@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Livre } from '../models/livre';
 import { environnement } from '../../../environments/environment';
+import { LivresModel } from '../../models/LivresModel';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,9 @@ export class LivreService {
   
   constructor(private readonly http: HttpClient) {}
 
-  getAllLivres(): Observable<Livre[]>{
-    return this.http.get<Livre[]>(
-      `${environnement.apiUrl}/livres`
+  getAllLivres(): Observable<LivresModel[]>{
+    return this.http.get<LivresModel[]>(
+      `${environnement.apiUrl}/livre`
     ) //prévoir partie catchError
   }
 }
