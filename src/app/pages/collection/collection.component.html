@@ -1,8 +1,12 @@
-<div *ngIf="livres.length > 0">
-  <h2>Liste des Livres</h2>
-  <app-livre *ngFor="let livre of livres" [livre]="livre"></app-livre>
-</div>
+<div class="global">
+  <div *ngIf="livres.length > 0">
+    <h2>Liste des Livres</h2>
+    <div class="collection">
+      <app-livre *ngFor="let livre of livres" [livre]="livre"></app-livre>
+    </div>
+  </div>
 
-<div *ngIf="livres.length === 0">
-  <p>Aucun livre disponible.</p>
+  <div *ngIf="livres.length === 0">
+    <p>Aucun livre disponible.</p>
+  </div>
 </div>

@@ -1,3 +1,15 @@
-*{
+.global {
     padding: 70px;
-}
+  }
+
+  h2{
+    text-align: center;
+  }
+  
+  .collection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espacement entre les livres */
+    justify-content: space-between;
+  }
+  
