@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { merge, Subject } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-contact',
@@ -8,33 +13,35 @@ import { FormsModule, ReactiveFormsModule, FormGroup, FormControl, Validators } 
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
+export class ContactComponent implements OnDestroy {
+
+  private readonly destroy = new Subject<void>();
 
   cheminImage = "https://img.freepik.com/vecteurs-libre/illustration-litterature-dessinee-main_23-2149263481.jpg?t=st=1730155311~exp=1730158911~hmac=b059a99802a34d55e1000e693d320a7e830a4dd5dc40a0af196d71ef4f960bdb&w=740";
 
-  formGroup = new FormGroup({
-    nom: new FormControl('', [Validators.required]),
-    organisation: new FormControl(''),
-    email: new FormControl('', [Validators.required, Validators.email]), /*A valider */
-    message: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]),
-  });
+  readonly nom = new FormControl('', [Validators.required]);
+  readonly email = new FormControl('', [Validators.required, Validators.email]);
 
-  /* invalide seulement si le champs a été touché ou modifié */
-  pasValideEtPasInitierOuModifer(formControl: FormControl ){
-    return formControl.invalid && (formControl.touched ||formControl.dirty);
+  errorMessage: string = '';
+
+  constructor(){
+    merge(this.nom.statusChanges, this.nom.valueChanges)
+    .pipe(takeUntilDestroyed());
   }
 
-  onSubmit() {
-    this.formGroup.markAllAsTouched(); //Verifie que tout est rempli
-    if(this.formGroup.invalid){
-      return;
-    }
-    console.log(this.formGroup.value);
-    alert("Mail envoyé");
+  ngOnDestroy() {
+    this.destroy.next();
+    this.destroy.complete();
   }
 }
+
